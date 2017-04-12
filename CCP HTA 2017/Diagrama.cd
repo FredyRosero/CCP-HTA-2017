@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CCP_HTA_2017.App">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACAAAAAAgAAAAAAEAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dataModel" />
+      <Field Name="applicationViewModel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CCP_HTA_2017.Gateway.ApplicationDataAccess">
+    <Position X="7" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAgAAAI=</HashCode>
+      <FileName>Gateway\ApplicatioDataAccess.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dataSet" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CCP_HTA_2017.ViewModels.ApplicationViewModel">
+    <Position X="13.25" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAgAAAAAwACAAAAYAIAAgAIBACAAAAQACAEAACAA=</HashCode>
+      <FileName>ViewModels\ApplicationViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="sessionViewModel" />
+      <Field Name="pacienteViewModel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CCP_HTA_2017.ViewModels.PacienteViewModel">
+    <Position X="9.25" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\PacienteViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCP_HTA_2017.Gateway.SqliteDataSet">
+    <Position X="3" Y="2.25" Width="2.25" />
+    <NestedTypes>
+      <Delegate Name="CCP_HTA_2017.Gateway.SqliteDataSet.pacienteRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="CCP_HTA_2017.Gateway.SqliteDataSet.registroRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="CCP_HTA_2017.Gateway.SqliteDataSet.registroRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="CCP_HTA_2017.Gateway.SqliteDataSet.pacienteRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="CCP_HTA_2017.Gateway.SqliteDataSet.pacienteRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="CCP_HTA_2017.Gateway.SqliteDataSet.configuracionRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="CCP_HTA_2017.Gateway.SqliteDataSet.configuracionDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="CCP_HTA_2017.Gateway.SqliteDataSet.configuracionRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="CCP_HTA_2017.Gateway.SqliteDataSet.configuracionRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="CCP_HTA_2017.Gateway.SqliteDataSet.registroDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="CCP_HTA_2017.Gateway.SqliteDataSet.pacienteDataTable" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Gateway\SqliteDataSet.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="CCP_HTA_2017.Gateway.SqliteDataSet.registroRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIBEAABAwAEAAJABAAAQAABAAgCQBgAAIAAAAECBBA=</HashCode>
+      <FileName>Gateway\SqliteDataSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCP_HTA_2017.ViewModels.SessionViewModel">
+    <Position X="16" Y="4.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAAAAACAABAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>ViewModels\SessionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

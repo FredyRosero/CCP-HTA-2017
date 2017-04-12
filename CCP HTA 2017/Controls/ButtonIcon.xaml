@@ -1,0 +1,19 @@
+﻿<UserControl
+    x:Class="CCP_HTA_2017.Controls.ButtonIcon"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CCP_HTA_2017.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="root"
+    d:DesignHeight="30"
+    d:DesignWidth="30"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="defaultColor" Color="Black"></SolidColorBrush>
+        <StreamGeometry x:Key="defaultGeometry">M2.6,16.7L9.3,10 2.6,3.3 3.3,2.6 10,9.3 16.7,2.6 17.4,3.3 10.7,10 17.4,16.7 16.7,17.4 10,10.7 3.3,17.4 2.6,16.7z</StreamGeometry>
+    </UserControl.Resources>
+    <Border MouseLeftButtonUp="Border_MouseLeftButtonUp">
+        <Path Margin="5" Data="{Binding Path=Data, ElementName=root, FallbackValue={StaticResource defaultGeometry}}" Fill="{Binding Path=Fill, ElementName=root, FallbackValue={StaticResource defaultColor}}" Stretch="Uniform" />
+    </Border>
+</UserControl>

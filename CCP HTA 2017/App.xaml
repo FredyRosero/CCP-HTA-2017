@@ -1,0 +1,41 @@
+﻿<Application
+    x:Class="CCP_HTA_2017.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
+    xmlns:ViewModels="clr-namespace:CCP_HTA_2017.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:CCP_HTA_2017"
+    xmlns:Converters="clr-namespace:CCP_HTA_2017.Converters"
+    d1p1:Ignorable="d"
+    Startup="App_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Fuente de datos principal -->
+            <ObjectDataProvider x:Key="applicationViewModel" ObjectType="{x:Type ViewModels:ApplicationViewModel}" />
+            <!-- Convertidores generals -->
+            <Converters:BoolToNegationConverter x:Key="boolToNegationConverter" />
+            <Converters:NumberToColorConverter x:Key="numberToColorConverter" />
+            <!-- Convertidores del modelo 'regsitro' -->
+            <Converters:RegsitroHombreStringConverter x:Key="hombreStringConverter" />
+            <Converters:RegsitroHtaStringConverter x:Key="htaStringConverter" />
+            <Converters:RegsitroRiesgo_cardioStringConverter x:Key="riesgo_cardioStringConverter" />
+            <!-- Convertidores del modelo 'paciente' -->
+            <Converters:PacienteNacimientoFloatConverter x:Key="nacimientoFloatConverter" />
+            <!-- Tema visual -->
+            <ResourceDictionary.MergedDictionaries>
+                <!--  Diccionrios de estilos y plantillas  -->                
+                <ResourceDictionary Source="Views/Styles/BaseTemaVisual_dict.xaml" />
+                <ResourceDictionary Source="Views/Styles/TextBoxTemplate_dict.xaml" />
+                <ResourceDictionary Source="Views/Styles/ComboBoxTemplate_dict.xaml" />
+                <ResourceDictionary Source="Views/Styles/DatePickerTemplate_dict.xaml" />
+                <ResourceDictionary Source="Views/Styles/ScrollBarTemplate_dict.xaml" />
+                <ResourceDictionary Source="Views/Styles/ScrollViewTemplate_dict.xaml" />
+                <ResourceDictionary Source="Views/Styles/DataGridTemplate_dict.xaml" />
+                <ResourceDictionary Source="Views/Styles/TemaVisual_dict.xaml" />
+                <ResourceDictionary Source="Views/Styles/DiccionarioDeRecursos.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

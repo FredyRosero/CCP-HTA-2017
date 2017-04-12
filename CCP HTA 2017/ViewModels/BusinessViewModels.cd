@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="CCP_HTA_2017.ViewModels.ApplicationViewModel">
+    <Position X="11.75" Y="16" Width="4" />
+    <AssociationLine Name="registroTableViewModel" Type="CCP_HTA_2017.ViewModels.RegistroTableViewModel">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.158" Y="-0.067" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAGqEjEAAAEwADggAgYBIIAgAggACYAgAIADAAAACAE=</HashCode>
+      <FileName>ViewModels\ApplicationViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="applicationDataAccess" />
+      <Field Name="pacienteTableViewModel" />
+      <Field Name="pacienteViewModel" />
+      <Field Name="childRegistroTableViewModel" />
+      <Field Name="registroTableViewModel" />
+      <Field Name="registroViewModel" />
+      <Field Name="sessionViewModel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CCP_HTA_2017.ViewModels.PacienteTableViewModel">
+    <Position X="16.5" Y="17.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAAAAAAAAAAAACAAAAAAAAAAAAQA=</HashCode>
+      <FileName>ViewModels\PacienteTableViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCP_HTA_2017.ViewModels.PacienteViewModel">
+    <Position X="7.5" Y="15.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\PacienteViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCP_HTA_2017.ViewModels.RegistroTableViewModel">
+    <Position X="20.25" Y="17.25" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="CCP_HTA_2017.ViewModels.RegistroTableViewModel.RegistroSortKey" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ViewModels\RegistroTableViewModel.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAACAAAAAAADAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\RegistroTableViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCP_HTA_2017.ViewModels.RowViewModelBase">
+    <Position X="4.5" Y="10.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BABIAEAASAAAgAAEAACoAABACAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\RowViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="selectedRow" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CCP_HTA_2017.ViewModels.TableViewModelBase">
+    <Position X="17" Y="13.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAICAEAAAAAAAAIAAAAAAAAAAAAIIAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\TableViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="applicationDataAccess" />
+      <Field Name="m_tableViewModel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Data.DataView">
+    <Position X="21.5" Y="6.5" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.DataRowView">
+    <Position X="4.25" Y="5.75" Width="3.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="DataView" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CCP_HTA_2017.ViewModels.RegistroViewModel">
+    <Position X="7.5" Y="13" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAgAACAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\RegistroViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCP_HTA_2017.Gateway.ApplicationDataAccess">
+    <Position X="15.25" Y="11" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAIAgAAAAAAAAAAgAAAI=</HashCode>
+      <FileName>Gateway\ApplicatioDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCP_HTA_2017.ViewModels.SessionViewModel">
+    <Position X="11.5" Y="7.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>IgACAAABQBAAAAAAAAAAAAIQAQAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ViewModels\SessionViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="usuarioTableViewModel" />
+      <Field Name="sessionModel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CCP_HTA_2017.ViewModels.UsuarioTableViewModel">
+    <Position X="17.25" Y="7.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAEAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\UsuarioTableViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCP_HTA_2017.Models.SessionModel">
+    <Position X="8.25" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\SessionModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
