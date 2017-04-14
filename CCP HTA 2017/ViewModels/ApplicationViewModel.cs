@@ -20,9 +20,9 @@ namespace CCP_HTA_2017.ViewModels
             try
             {
                 applicationDataAccess.pacienteTableAdapter.Fill(applicationDataAccess.dataSet.paciente);
-                PacienteSelectedRowNewAdd(); // Se debe agregar la fila nueva, despues de cargar los datos, por el método 'Fill' cancela resetea la tabla
+                //PacienteSelectedRowNewAdd(); // Se debe agregar la fila nueva, despues de cargar los datos, por el método 'Fill' cancela resetea la tabla
                 applicationDataAccess.registroTableAdapter.Fill(applicationDataAccess.dataSet.registro);
-                RegistroSelectedRowNewAdd(); // Se debe agregar la fila nueva, despues de cargar los datos, por el método 'Fill' cancela resetea la tabla
+                //RegistroSelectedRowNewAdd(); // Se debe agregar la fila nueva, despues de cargar los datos, por el método 'Fill' cancela resetea la tabla
                 IsDataLoaded = true;
             }
             catch (Exception ex)

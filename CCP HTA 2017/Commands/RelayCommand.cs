@@ -26,14 +26,34 @@ namespace CCP_HTA_2017.Commands
         [DebuggerStepThrough]
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null ? true : _canExecute(parameter);
+            bool result = true;
+            if (_canExecute != null)
+            {
+                result = _canExecute(parameter);
+                CommandManager.InvalidateRequerySuggested();
+            }
+            return result;
         }
 
         public event EventHandler CanExecuteChanged
         {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
+            add
+            {
+                if (_canExecute != null)
+                    CommandManager.RequerySuggested += value;
+            }
+            remove
+            {
+                if (_canExecute != null)
+                    CommandManager.RequerySuggested -= value;
+            }
         }
+
+        public void RaiseCanExecuteChanged()
+        {
+            CommandManager.InvalidateRequerySuggested();
+        }
+
         public void Execute(object parameter)
         {
             _execute(parameter);

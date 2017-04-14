@@ -1,0 +1,2 @@
+﻿Agregar paciente nuevo al inciar la app
+ButtonIcon trigger CanExecute

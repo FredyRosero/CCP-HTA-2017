@@ -69,7 +69,8 @@ namespace CCP_HTA_2017.ViewModels
         /// <param name="newRow">Es verdadero si se selecciona un paciente luego de insertarlo en la base de datos. </param>  
         public void PacienteSelectedRowSelectBySortKey (bool newRow = false)
         {
-            if (PacienteSelectedRowChangeTo(pacienteTableViewModel.FindRowBySortKey(pacienteTableSortKeyNin)) != null)
+//            bool success = 
+            if ( PacienteSelectedRowChangeTo( pacienteTableViewModel.FindRowBySortKey(pacienteTableSortKeyNin)) != null )
                 pacienteViewModel.actionResponse.Set(newRow ? "Paciente '" + pacienteTableSortKeyNin + "' insertado en la base de datos." : "Paciente '" + pacienteTableSortKeyNin + "' encontrado.", Models.ResponseType.Success);
             else
                 pacienteViewModel.actionResponse.Set("Paciente no encontrado.", Models.ResponseType.Warning);
@@ -81,12 +82,17 @@ namespace CCP_HTA_2017.ViewModels
             {
                 if (_PacienteSelectedRowSelectBySortKeyCommand == null)
                 {
-                    _PacienteSelectedRowSelectBySortKeyCommand = new RelayCommand(param => PacienteSelectedRowSelectBySortKey(), param => !String.IsNullOrEmpty(pacienteTableSortKeyNin) );
+                    _PacienteSelectedRowSelectBySortKeyCommand = new RelayCommand(param => PacienteSelectedRowSelectBySortKey(), param => pacienteTableSortKeyNinIsNullOrEmpty());
                 }
                 return _PacienteSelectedRowSelectBySortKeyCommand;
             }
         }
         RelayCommand _PacienteSelectedRowSelectBySortKeyCommand;
+
+        public bool pacienteTableSortKeyNinIsNullOrEmpty ()
+        {
+            return !String.IsNullOrEmpty(pacienteTableSortKeyNin);
+        }
 
         /// <summary> Deja nulo el paciente alctualmente seleccionado. </summary>
         public void PacienteSelecteRowEmpty()

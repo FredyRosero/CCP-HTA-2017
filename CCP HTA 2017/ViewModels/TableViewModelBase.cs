@@ -45,7 +45,7 @@ namespace CCP_HTA_2017.ViewModels
         {
             get
             {
-                if (CurrentRowViewModel.rowSelected == null)
+                if (CurrentRowViewModel == null || CurrentRowViewModel.rowSelected == null)
                     return false;
                 else
                     return CurrentRowViewModel.rowSelected.Row.RowState == DataRowState.Detached || CurrentRowViewModel.rowSelected.Row.RowState == DataRowState.Added;

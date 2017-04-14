@@ -161,24 +161,29 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="53" />
                                 <ColumnDefinition Width="122" />
-                                <ColumnDefinition/>
-                                <ColumnDefinition Width="*" MinWidth="25" />
-                                <ColumnDefinition Width="*" MinWidth="25" />
-                                <ColumnDefinition Width="*" MinWidth="25" />
-                                <ColumnDefinition Width="*" MinWidth="25" />
+                                <ColumnDefinition Width="114*" MinWidth="25" />
+                                <ColumnDefinition Width="114*" MinWidth="25" />
+                                <ColumnDefinition Width="114*" MinWidth="25" />
+                                <ColumnDefinition Width="113*" MinWidth="25" />
                             </Grid.ColumnDefinitions>
+                            <!--  Etiqueta  -->
                             <TextBlock
                                 Grid.Column="0"
                                 Padding="0,6,9,0"
                                 VerticalAlignment="Top"
                                 Foreground="{DynamicResource Resalte_brush}"
                                 Text="Paciente" />
+                            <!--  Campo de búsqueda  -->
                             <Grid Grid.Row="2" Grid.Column="1" Margin="0,0,10,0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto" />
                                     <RowDefinition Height="auto" />
                                 </Grid.RowDefinitions>
-                                <TextBox x:Name="pacienteTableSortKeyNinTextBox" Style="{DynamicResource TextBoxStyle}" Text="{Binding pacienteTableSortKeyNin, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBox
+                                    x:Name="pacienteTableSortKeyNinTextBox"
+                                    Height="25"
+                                    Style="{DynamicResource TextBoxStyle}"
+                                    Text="{Binding pacienteTableSortKeyNin, UpdateSourceTrigger=PropertyChanged}" />
                                 <Label
                                     Grid.Row="1"
                                     Height="15"
@@ -190,84 +195,44 @@
                                     FontSize="10"
                                     Style="{StaticResource Label_superior}" />
                             </Grid>
-                            <Button
-                                Grid.Column="2"
-                                Width="Auto"
-                                Margin="2,0,2,0"
-                                Padding="0"
-                                HorizontalAlignment="Stretch"
-                                VerticalAlignment="Top"
-                                Command="{Binding PacienteSelectedRowNewAddCommand}">
-                                <Button.Style>
-                                    <Style BasedOn="{StaticResource ButtonStyle}" TargetType="{x:Type Button}">
+                            <!--  Buscar paciente  -->
+                            <Controls:ButtonIcon Grid.Column="2">
+                                <Controls:ButtonIcon.Style>
+                                    <Style BasedOn="{StaticResource ButtonIconToolBarStyle}" TargetType="{x:Type Controls:ButtonIcon}">
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding pacienteViewModel.IsEmpty, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Value="true">
                                                 <Setter Property="Command" Value="{Binding PacienteSelectedRowSelectBySortKeyCommand}" />
-                                                <Setter Property="Content">
-                                                    <Setter.Value>
-                                                        <Path Style="{DynamicResource buscar_Path}" />
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="Data" Value="{StaticResource Buscar_Geometry}" />
                                             </DataTrigger>
                                             <DataTrigger Binding="{Binding pacienteViewModel.IsEmpty, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Value="false">
                                                 <Setter Property="Command" Value="{Binding PacienteSelecteRowEmptyCommand}" />
-                                                <Setter Property="Content">
-                                                    <Setter.Value>
-                                                        <Path Style="{DynamicResource deseleccionar_Path}" />
-                                                    </Setter.Value>
-                                                </Setter>
+                                                <Setter Property="Data" Value="{StaticResource Cancel_Geometry}" />
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
-                                </Button.Style>
-                            </Button>
+                                </Controls:ButtonIcon.Style>
+                            </Controls:ButtonIcon>
+                            <!--  Nuevo paciente  -->
                             <Controls:ButtonIcon
                                 Grid.Column="3"
-                                Width="Auto"
-                                Data="M2.6,16.7L9.3,10L2.6,3.3l0.7-0.7L10,9.3l6.7-6.7l0.7,0.7L10.7,10l6.7,6.7l-0.7,0.7L10,10.7l-6.7,6.7L2.6,16.7z"
-                                Fill="{StaticResource Frontal_brush}"
-                                Margin="2,0,2,0"                                
-                                Padding="0"
-                                HorizontalAlignment="Stretch"
-                                VerticalAlignment="Top">
-                            </Controls:ButtonIcon>
-                            <Button
-                                Grid.Column="4"
-                                Width="Auto"
-                                Margin="2,0,2,0"
-                                Padding="0"
-                                HorizontalAlignment="Stretch"
-                                VerticalAlignment="Top"
                                 Command="{Binding PacienteSelectedRowNewAddCommand}"
-                                Style="{StaticResource ButtonStyle}">
-                                <Path Style="{DynamicResource nuevo_Path}" />
-                            </Button>
-                            <Button
-                                x:Name="guardarPaciente_btn"
-                                Grid.Column="5"
-                                Width="Auto"
-                                Margin="2,0,2,0"
-                                Padding="0"
-                                HorizontalAlignment="Stretch"
-                                VerticalAlignment="Top"
+                                Data="{StaticResource Nuevo_Geometry}"
+                                Style="{StaticResource ButtonIconToolBarStyle}" />
+                            <!--  Guardar paciente  -->
+                            <Controls:ButtonIcon
+                                Grid.Column="4"
                                 Command="{Binding pacienteTableViewModel.UpdateTableLookCurrentRowCommand}"
-                                Style="{StaticResource ButtonStyle}">
-                                <Path Style="{DynamicResource guardar_Path}" />
-                            </Button>
-                            <Button
-                                x:Name="eliminarPaciente_btn"
-                                Grid.Column="6"
-                                Width="Auto"
-                                Margin="2,0,2,0"
-                                Padding="0"
-                                HorizontalAlignment="Stretch"
-                                VerticalAlignment="Top"
-                                Command="{Binding pacienteTableViewModel.DeleteCurrentRowCommand, Mode=OneWay}"
-                                Style="{StaticResource ButtonStyle}">
-                                <Path Style="{DynamicResource eliminar_Path}" />
-                            </Button>
+                                Data="{StaticResource Guardar_Geometry}"
+                                Style="{StaticResource ButtonIconToolBarStyle}" />
+                            <!--  Eliminar paciente  -->
+                            <Controls:ButtonIcon
+                                Grid.Column="5"
+                                Command="{Binding pacienteTableViewModel.DeleteCurrentRowCommand}"
+                                Data="{StaticResource Eliminar_Geometry}"
+                                Style="{StaticResource ButtonIconToolBarStyle}" />
                         </Grid>
                     </Grid>
+                    <!--  Texto respuesta  -->
                     <TextBlock
                         Grid.Row="3"
                         Grid.Column="1"
@@ -276,6 +241,7 @@
                         VerticalAlignment="Center"
                         Text="{Binding pacienteViewModel.actionResponse.responseText, TargetNullValue=Nulo}"
                         TextWrapping="Wrap" />
+                    <!--  Formulario Paciente  -->
                     <Grid
                         x:Name="PacienteUI_GridColpasable"
                         Grid.Row="4"
@@ -487,7 +453,7 @@
                         Template="{DynamicResource DataGridControlTemplate}">
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridCell}">
-                                <Setter Property="Margin" Value="10"/>
+                                <Setter Property="Margin" Value="10" />
                                 <Style.Triggers>
                                     <Trigger Property="IsSelected" Value="True">
                                         <Setter Property="Background">
@@ -1648,8 +1614,8 @@
                                     <TextBox
                                         x:Name="col_tb"
                                         Grid.Row="1"
-                                        TextWrapping="Wrap"
                                         Foreground="{Binding col, ConverterParameter=col, Converter={StaticResource numberToColorConverter}}"
+                                        TextWrapping="Wrap"
                                         Validation.ErrorTemplate="{StaticResource validationErrorTemplate}">
                                         <!--<Binding Mode="TwoWay" Path="registroViewModel.rowSelected[col]" UpdateSourceTrigger="LostFocus">
                                             <Binding.ValidationRules>

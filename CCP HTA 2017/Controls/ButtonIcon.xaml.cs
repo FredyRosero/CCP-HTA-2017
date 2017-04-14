@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CCP_HTA_2017.Controls
 {
@@ -20,28 +11,79 @@ namespace CCP_HTA_2017.Controls
     /// </summary>
     public partial class ButtonIcon : UserControl
     {
-        public static readonly DependencyProperty DataPropery = DependencyProperty.Register("Data", typeof(Geometry), typeof(ButtonIcon), new PropertyMetadata(null));
+        public static readonly DependencyProperty DataProperty = DependencyProperty.Register("Data", typeof(Geometry), typeof(ButtonIcon), new PropertyMetadata(null));
         public Geometry Data
         {
-            get { return (Geometry)GetValue(DataPropery); }
-            set { SetValue(DataPropery, value); }
+            get { return (Geometry)GetValue(DataProperty); }
+            set { SetValue(DataProperty, value); }
         }
-        public static readonly DependencyProperty FillPropery = DependencyProperty.Register("Fill", typeof(Brush), typeof(ButtonIcon), new PropertyMetadata(null) );
+
+        public static readonly DependencyProperty FillProperty = DependencyProperty.Register("Fill", typeof(Brush), typeof(ButtonIcon), new PropertyMetadata(null) );
         public Brush Fill
         {
-            get { return (Brush)GetValue(FillPropery); }
-            set { SetValue(FillPropery, value); }
+            get { return (Brush)GetValue(FillProperty); }
+            set { SetValue(FillProperty, value); }
         }
-        public ICommand Command { get; set; }
-        public object CommandParameter { get; set; }
+
+        #region Command
+        public static readonly DependencyProperty CommandProperty = DependencyProperty.Register(
+            "Command", 
+            typeof(ICommand), 
+            typeof(ButtonIcon), 
+            new PropertyMetadata(null, OnCommandChanged)
+        );
+        public ICommand Command
+        {
+            get { return (ICommand)GetValue(CommandProperty); }
+            set { SetValue(CommandProperty, value); }
+        }
+
+        private static void OnCommandChanged (DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
+        {
+            var buttonIcon = (ButtonIcon)dependencyObject;
+
+            var _command = args.OldValue as ICommand;
+            if (_command != null)
+                _command.CanExecuteChanged -= buttonIcon.CommandOnCanExecuteChanged;
+
+            _command = args.NewValue as ICommand;
+            if (_command != null)
+                _command.CanExecuteChanged += buttonIcon.CommandOnCanExecuteChanged;
+        }
+
+        //[DebuggerStepThrough]
+        private void CommandOnCanExecuteChanged(object sender, EventArgs eventArgs)
+        {
+            IsEnabled = Command.CanExecute(null);
+        }
+
+        #endregion Command
+
+        #region CommandParameter
+
+        public static readonly DependencyProperty CommandParameterProperty = DependencyProperty.Register(
+            "CommandParameter",
+            typeof(Object),
+            typeof(ButtonIcon),
+            new PropertyMetadata(null)
+        );
+
+        public Object CommandParameter
+        {
+            get { return (Object)GetValue(CommandParameterProperty); }
+            set { SetValue(CommandParameterProperty, value); }
+        }
+
+        #endregion CommandParameter
+
         public ButtonIcon()
         {
             InitializeComponent();
         }
 
-        private void Border_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void CommandExecute(object sender, MouseButtonEventArgs e)
         {
-            Command.Execute(CommandParameter);
+            if (Command!=null) Command.Execute(null);
         }
     }
 }
