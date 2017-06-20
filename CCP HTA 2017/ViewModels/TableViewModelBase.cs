@@ -226,14 +226,10 @@ namespace CCP_HTA_2017.ViewModels
                 }
                 catch (SQLiteException sqlEx)
                 {
-                    switch (sqlEx.ResultCode)
+                    switch (sqlEx.ErrorCode)
                     {
                         case (SQLiteErrorCode.Constraint):
                             messageFormat = "El {0} ya existe en la talba '{0}' en la base de datos.";
-                            break;
-
-                        case (SQLiteErrorCode.Unknown):
-                            messageFormat = "No se logró efectuar lso cambios en la talba '{0}' en la base de datos. Error desconodido";
                             break;
 
                         default:

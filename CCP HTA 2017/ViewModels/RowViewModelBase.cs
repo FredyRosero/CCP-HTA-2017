@@ -124,7 +124,7 @@ namespace CCP_HTA_2017.ViewModels
 
         public override string ToString()
         {
-            if (rowSelected == null) return "Null";            
+            if (rowSelected == null) return "Null RowViewModel!";            
             StringBuilder sb = new StringBuilder();
             sb.Append("[");
             int i = 0;

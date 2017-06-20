@@ -44,8 +44,8 @@ namespace CCP_HTA_2017Tests.ViewModels
             appVm.pacienteTableViewModel.tableViewModel.ListChanged 
                 += new System.ComponentModel.ListChangedEventHandler(OnListChanged);
 
-            appVm.pacienteViewModel.rowSelected.PropertyChanged
-                += new System.ComponentModel.PropertyChangedEventHandler(OnPropertyChange);
+            //appVm.pacienteViewModel.rowSelected.PropertyChanged
+            //    += new System.ComponentModel.PropertyChangedEventHandler(OnPropertyChange);
         }
 
         private void OnListChanged(object sender, System.ComponentModel.ListChangedEventArgs args)
@@ -64,6 +64,7 @@ namespace CCP_HTA_2017Tests.ViewModels
         [TestMethod]
         public void AppVm_PacienteSelectedRowNewAdd() //Create selection
         {
+            Trace.WriteLine("AppVm_PacienteSelectedRowNewAdd():");
             //**/
             appVm.PacienteSelectedRowNewAddCommand.Execute(null);
             Trace.WriteLine("appVm.PacienteSelectedRowSelectBySortKeyCommand.Execute(null);");
@@ -74,6 +75,7 @@ namespace CCP_HTA_2017Tests.ViewModels
         [TestMethod]
         public void AppVm_PacienteSelectedRowSelectBySortKey() // Read paciente
         {
+            Trace.WriteLine("ATTEMP: appVm.pacienteTableViewModelSortKeyNin = " + NinExistente);
             appVm.pacienteTableSortKeyNin = NinExistente;
             Trace.WriteLine("appVm.pacienteTableViewModelSortKeyNin = " + NinExistente);
 

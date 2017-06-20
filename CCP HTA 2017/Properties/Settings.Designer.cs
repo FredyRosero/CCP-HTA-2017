@@ -41,29 +41,6 @@ namespace CCP_HTA_2017.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("data source=\"D:\\fredy\\Documents\\Visual Studio 2015\\Projects\\CCP HTA 2017\\CCP HTA " +
-            "2017\\App_Data\\sqlite.db\";datetimeformat=JulianDay;synchronous=Full;datetime form" +
-            "at=JulianDay;fail if missing=True")]
-        public string sqliteConnectionString {
-            get {
-                return ((string)(this["sqliteConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=App_Data\\sqlite.db; Version=3; FailIfMissing=True; New=False; DateTim" +
-            "eFormat=JulianDay;")]
-        public string ParametrosConexiónSQLite {
-            get {
-                return ((string)(this["ParametrosConexiónSQLite"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
@@ -89,6 +66,18 @@ namespace CCP_HTA_2017.Properties {
             }
             set {
                 this["NumberToColorSetting"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=\"C:\\Users\\Fredy\\Source\\Repos\\CCP-HTA-2017\\CCP HTA 2017\\App_Data\\sqlit" +
+            "e.db\";datetimeformat=JulianDay;synchronous=Full;datetime format=JulianDay;fail i" +
+            "f missing=True")]
+        public string sqliteConnectionString {
+            get {
+                return ((string)(this["sqliteConnectionString"]));
             }
         }
     }

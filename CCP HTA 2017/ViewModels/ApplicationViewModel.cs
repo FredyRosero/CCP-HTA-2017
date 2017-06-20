@@ -77,6 +77,7 @@ namespace CCP_HTA_2017.ViewModels
                     PacienteSelectedRowSelectBySortKey(true);
                 }
             };
+
             pacienteViewModel = new PacienteViewModel(applicationDataAccess);
             pacienteTableViewModel.CurrentRowViewModel = pacienteViewModel;
 

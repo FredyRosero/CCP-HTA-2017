@@ -7,7 +7,7 @@
     xmlns:Converters="clr-namespace:CCP_HTA_2017.Converters"
     xmlns:SQLite="clr-namespace:System.Data.SQLite;assembly=System.Data.SQLite"
     xmlns:System="clr-namespace:System;assembly=mscorlib"
-    xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
+    xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
     xmlns:ViewModels="clr-namespace:CCP_HTA_2017.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"

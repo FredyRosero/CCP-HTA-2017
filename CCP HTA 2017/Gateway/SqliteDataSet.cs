@@ -6,6 +6,13 @@ namespace CCP_HTA_2017.Gateway
 {
     public partial class SqliteDataSet
     {
+        partial class registroDataTable
+        {
+        }
+
+        partial class configuracionDataTable
+        {
+        }
 
         partial class pacienteDataTable
         {
